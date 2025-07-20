@@ -2,22 +2,22 @@
 
 A web application to track and manage your financial goals. Built with React and JSON Server.
 
-## 🚀 Live Demo
+## Live Demo
 [View Deployed App](https://smart-goal-planner-seven.vercel.app/)
 
-## 🧠 Features
+## Features
 - Add new financial goals
 - Edit and delete existing goals
 - Deposit funds towards a goal
 - View progress with a progress bar
 - Responsive and user-friendly UI
 
-## 🛠️ Tech Stack
+## Tech Stack
 - React (Frontend)
 - JSON Server (Mock Backend API)
 - CSS (Styling)
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository
 ```bash
