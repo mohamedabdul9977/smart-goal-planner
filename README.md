@@ -1,4 +1,4 @@
-# Smart Goal Planner 🎯
+# Smart Goal Planner 
 
 A web application to track and manage your financial goals. Built with React and JSON Server.
 
