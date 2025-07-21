@@ -49,3 +49,8 @@ const GoalCard = ({ goal, onDelete, onEdit }) => {
 };
 
 export default GoalCard;
+// This component represents a single financial goal card.
+// It displays the goal's name, category, progress bar, and details such as saved amount, target amount, remaining amount, deadline, and status.
+// It also includes buttons to edit or delete the goal.
+// The status of the goal is determined based on the saved amount, target amount, and deadline.
+// The component uses a progress bar to visually represent the goal's progress towards the target amount.

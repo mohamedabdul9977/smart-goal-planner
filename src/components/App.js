@@ -124,3 +124,7 @@ const App = () => {
 };
 
 export default App;
+// This component serves as the main application container.
+// It fetches financial goals from an API and manages the state of the application.
+// It includes functionality to add, update, delete goals, and make deposits towards goals.
+// The component uses React hooks for state management and side effects.

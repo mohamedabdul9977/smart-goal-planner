@@ -61,3 +61,9 @@ const DepositForm = ({ goals, onDeposit, onCancel }) => {
 };
 
 export default DepositForm;
+// This component allows users to make deposits towards their financial goals.
+// It includes a dropdown to select a goal and an input field for the deposit amount.
+// The form handles the submission of the deposit and calls the provided `onDeposit` function with the selected goal ID and deposit amount.
+// The component also includes a cancel button to close the form without making a deposit.
+// The form ensures that the user selects a goal and enters a valid deposit amount before submission.
+// The deposit amount must be a positive number, and the goal selection is required.

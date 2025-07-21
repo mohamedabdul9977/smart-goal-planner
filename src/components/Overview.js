@@ -73,3 +73,5 @@ const Overview = ({ goals }) => {
 };
 
 export default Overview;
+// This component provides an overview of the user's financial goals.
+// It calculates and displays total goals, total saved amount, total target amount, and completed goals

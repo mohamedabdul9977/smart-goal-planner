@@ -10,3 +10,5 @@ const Header = () => {
 };
 
 export default Header;
+// This component serves as the header for the application.
+// It displays the title of the application and a brief description.

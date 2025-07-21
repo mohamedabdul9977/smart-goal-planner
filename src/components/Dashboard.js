@@ -84,3 +84,7 @@ const Dashboard = ({
 };
 
 export default Dashboard;
+// This component serves as the main dashboard for the application.
+// It displays the list of financial goals, allows users to add new goals,
+// edit existing goals, make deposits, and view an overview of their goals.
+// The component uses React hooks for state management and references to handle form visibility and scrolling.

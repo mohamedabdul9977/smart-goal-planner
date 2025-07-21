@@ -14,3 +14,4 @@ const ProgressBar = ({ percentage }) => {
 };
 
 export default ProgressBar;
+// This component renders a progress bar to visually represent the progress of a financial goal.

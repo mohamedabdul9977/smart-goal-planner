@@ -101,3 +101,6 @@ const AddGoalForm = ({ onAddGoal, onCancel, initialData }) => {
 };
 
 export default AddGoalForm;
+// This component allows users to add or edit a financial goal.
+// It includes fields for goal name, target amount, category, and deadline.
+// The form handles both adding a new goal and editing an existing one based on the presence of `initialData`.
