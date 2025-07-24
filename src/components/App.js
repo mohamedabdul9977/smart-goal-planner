@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Dashboard from './Dashboard';
 import '../App.css';
+import API_BASE_URL from '../config';
+const API_URL = API_BASE_URL;
 
-const API_URL = `${process.env.REACT_APP_API_URL}/goals`;
+
 
 
 const App = () => {
