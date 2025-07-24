@@ -1,46 +1,56 @@
 const jsonServer = require('json-server');
-const fs = require('fs');
 const path = require('path');
-
-// Database file path
+const fs = require('fs');
+const server = jsonServer.create();
 const dbPath = path.join(__dirname, 'db.json');
 
-// Create server
-const server = jsonServer.create();
+// Check if db.json exists, create if it doesn't
+if (!fs.existsSync(dbPath)) {
+  fs.writeFileSync(dbPath, JSON.stringify({ goals: [] }));
+}
 
-// Create router using existing db.json
 const router = jsonServer.router(dbPath);
-
-// Default middlewares
 const middlewares = jsonServer.defaults();
 
-// Set default middlewares
-server.use(middlewares);
-server.use(jsonServer.bodyParser);
+// Determine if we're in development mode
+const isDev = process.argv.includes('--dev');
 
-// Add delay to simulate real API (remove in production)
-server.use((req, res, next) => {
-  setTimeout(next, 500);
-});
+if (isDev) {
+  // Development configuration
+  server.use(middlewares);
+  server.use(jsonServer.bodyParser);
+  server.use('/api', router);
+  
+  const PORT = process.env.PORT || 4000;
+  server.listen(PORT, () => {
+    console.log(`
+    🚀 JSON Server is running in development mode!
+    🔗 API: http://localhost:${PORT}/api
+    `);
+  });
+} else {
+  // Production configuration
+  // Serve static files from React build
+  server.use(jsonServer.static(path.join(__dirname, 'build')));
+  
+  // API routes
+  server.use('/api', router);
+  server.use(middlewares);
+  server.use(jsonServer.bodyParser);
+  
+  // Handle React routing
+  server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+  
+  const PORT = process.env.PORT || 4000;
+  server.listen(PORT, () => {
+    console.log(`
+    🚀 Server is running in production mode!
+    🔗 API: https://your-render-url.onrender.com/api
+    🌍 Web: https://your-render-url.onrender.com
+    `);
+  });
+}
 
-// API routes
-server.use('/api', router);
-
-// Error handling
-server.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
-});
-
-// Start server
-const PORT = process.env.PORT || 4000;
-server.listen(PORT, () => {
-  console.log(`
-  🚀 JSON Server is running!
-  🔗 Local: http://localhost:${PORT}
-  📁 Using database: ${dbPath}
-  `);
-});
-
-// Export for testing
 module.exports = server;

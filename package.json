@@ -15,13 +15,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run react\" \"npm run server\"",
-    "react": "react-scripts start",
-    "server": "node server.js",
+    "start": "node server.js",
     "build": "react-scripts build",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "client:dev": "react-scripts start",
+    "server:dev": "node server.js --dev",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server:dev": "json-server --watch db.json --port 4000"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
