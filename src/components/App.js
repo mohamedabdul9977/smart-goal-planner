@@ -3,7 +3,8 @@ import Header from './Header';
 import Dashboard from './Dashboard';
 import '../App.css';
 
-const API_URL = 'http://localhost:3000/goals';
+const API_URL = `${process.env.REACT_APP_API_URL}/goals`;
+
 
 const App = () => {
   const [goals, setGoals] = useState([]);
