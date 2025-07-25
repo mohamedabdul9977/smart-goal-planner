@@ -3,7 +3,11 @@ import Header from './Header';
 import Dashboard from './Dashboard';
 import '../App.css';
 import API_BASE_URL from '../config';
-const API_URL = API_BASE_URL;
+
+
+const API_URL = `${API_BASE_URL}/goals`; // Adjust the endpoint as needed
+
+
 
 
 
